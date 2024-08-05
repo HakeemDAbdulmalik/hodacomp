@@ -8,6 +8,10 @@ body {
   margin: auto;
 }
 
+a:hover, a:active {
+  /* border-bottom: solid 1px #ccc; */
+}
+
 main, header, footer{
   max-width: 80%;
   width: 100%;
@@ -23,7 +27,7 @@ header {
   grid-template-columns: 1fr 1fr;
   justify-content: space-between;
   align-items: center;
-  border-bottom: solid #000 1px;
+  border-bottom: solid #aaa 1px;
   padding: .5rem 1rem;
 }
 
@@ -46,17 +50,23 @@ img.logo{
 }
 
 main{
-  font-size: 1.2rem;
-  line-height: 2rem;
+  font-size: 1.1rem;
+  line-height: 2.5rem;
   display: grid;
   grid-template-columns: 1fr 3fr;
 }
 
-.sign-up-form-container iframe {
+p {
+  display: block;
+  padding: 0px 12px;
+  margin: 0;
+}
+
+/* .sign-up-form-container iframe {
   width: 100%;
   min-height: 600px;
   border-radius: 4rem;
-}
+} */
 
 .yt-video {
   width: 80%;
@@ -65,19 +75,24 @@ main{
   display: block;
 }
 
-.greetings p {
-  font-weight: 600;
-}
-
 .red {
   color: red;
   font-weight: 600;
 }
 
+hr {
+  border-top: 3px dashed #ccc;
+}
+
 .arabic {
   text-align: right;
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: 3rem;
+  background-color: #eeeeee;
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
 }
 
 .video-title.episodes{
@@ -89,8 +104,17 @@ main{
 
 /* Style the tab */
 .tab {
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
+  border-right: 1px solid #ccc;
+  padding-top: 3rem;
+}
+
+.video {
+  max-width: 560px;
+  max-height: 315px;
+  width: 100%;
+  height: 315px;
+  display: block;
+  margin: auto auto 5rem auto;
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -98,40 +122,154 @@ main{
   display: block;
   background-color: inherit;
   color: black;
-  padding: 22px 16px;
+  padding: 3px;
   width: 100%;
   border: none;
   outline: none;
   text-align: left;
   cursor: pointer;
   transition: 0.3s;
-
+  font-size: large;
+  font-weight: 600;
+  margin-bottom: 3rem;
 }
 
 /* Change background color of buttons on hover */
 .tab button:hover {
-  background-color: #ddd;
+  border-bottom: solid 1px #000;
 }
 
 /* Create an active/current "tab button" class */
 .tab button.active {
-  background-color: #ccc;
+  border-bottom: solid 1px #aaa;
 }
 
 /* Style the tab content */
 .tabcontent {
-  padding: 0px 12px;
-  border: 1px solid #ccc;
+  border-right: 1px solid #ccc;
   border-left: none;
   display: none;
+  padding-top: 1rem;
 }
 
 #Greetings {
   display: block;
 }
 
+.title, .quran-reference, .quran-translation {
+  font-size: large;
+  font-weight: 600;
+  text-align: center;
+}
+
+span.title {
+  text-align: center;
+}
+
+.button_fixed_container {
+  position: fixed;
+  max-height: 95%;
+  width: 20%;
+}
+
+.title.resource-title {
+  font-size: 1.4rem;
+}
+.sub-title {
+  font-size: 1.2rem;
+  font-weight: 550;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(86, 188, 92, 1);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  text-align:center;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+
+}
+
+.sidenav a:hover{
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.mobile_menu {
+  display: none;
+}
+
 @media screen and (max-width: 800px) {
+  .mobile_menu {
+    display: block;
+  }
+  .comp_link {
+    display: none;
+  }
   main{
     grid-template-columns: 1fr;
+  }
+  .tab {
+    display: none;
+  }
+  .tabcontent {
+    border-left: 1px solid #ccc;
+  }
+
+  main, header, footer {
+    max-width: 95%;
+  }
+  .active {
+    background-color: rgb(86, 188, 92);;
+    border-top: #fff solid 2px;
+    border-bottom: #fff solid 2px;
   }
 }
